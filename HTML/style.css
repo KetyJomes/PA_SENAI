@@ -1,17 +1,28 @@
 /* Tudo nessa tag style é css */
+*{
+    color:rgb(7, 155, 145); /* se aplica para todos*/      
+    font-size: 40px;
+    
+}
+
 .fonte-rosa{
     color:rgb(248, 6, 107); /* se aplica para quantas quiser*/
     background-color: rgb(243, 126, 185); 
+    font-size: 60px;
+    box-sizing: border-box;
+    text-align: center;
+} 
+
+.marquinho-cor-preto{
+    color:rgb(0, 0, 0); 
     font-size: 40px;
+    box-sizing: border-box;
+    text-align: center;
 } 
 
 #sos-2{
     color:rgb(129, 0, 129);
     background-color: rgb(227, 132, 240); /* se aplica ao id, ou seja somente para uma*/
-    font-size: 40px;
-}
-*{
-    color:rgb(7, 155, 145); /* se aplica para todos*/      
     font-size: 40px;
 }
 
@@ -22,8 +33,14 @@ div p{ /*se aplica a tag colocada, nesse caso p*/
 .marquinho:hover{ /*Para manipular a imagem*/
     rotate: 3600deg;
     transition: 1s;
+
 }
 .marquinho{
     width: 250px;
 }
 
+.centraliza{ /*Centralizar a imagme*/
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

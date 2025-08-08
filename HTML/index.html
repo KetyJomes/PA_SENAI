@@ -4,26 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PA/HTML</title>
-    <style> 
-        .fonte-rosa{ 
-            color:rgb(248, 6, 107);
-            background-color: rgb(243, 126, 185);
+    <style> /* Tudo nessa tag style é css */
+        .fonte-rosa{
+            color:rgb(248, 6, 107); /* se aplica para quantas quiser*/
+            background-color: rgb(243, 126, 185); 
+            font-size: 40px;
+        } 
+
+        #sos-2{
+            color:rgb(129, 0, 129);
+            background-color: rgb(227, 132, 240); /* se aplica ao id, ou seja somente para uma*/
             font-size: 40px;
         }
+        *{
+            color:rgb(129, 0, 129); /* se aplica para todos*/
+           
+            font-size: 40px;
+        }
+
+        div p{ /*se aplica a tag colocada, nesse caso p*/
+            color: mediumvioletred;
+        }
+
+        .marquinho:hover{
+            rotate: 360deg;
+            transition: 5s;
+        }
+        .marquinho{
+            width: 250px;
+        }
+
     </style>
 </head>
 <body>
     <h1 class="fonte-rosa"> ✧ SOS ✧ </h1>
     <h1> ------------- </h1>
+    <h1 id="sos-2"> ✧ SOS ✧ </h1><!-- coloca id, pois aquelas cores vai ser só desse título-->
+    <br>
+    <h1 class="sos-3"> ✧ SOS ✧ </h1>
     <br>
     <img src="https://i.pinimg.com/236x/76/6b/80/766b800105935a41cd289beb4d505612.jpg" alt="Imagem">
-    <br>
-    <br>
+    <br> <br>
     <input type="date" placeholder="Digite um texto: ">
     <br>
     <br>
     <input type="text" placeholder="Digite um texto: ">
     <br>
     <input type="range" placeholder="">
+    <br><br>
+    <div>
+        <p>Parágrafo</p>
+        <h1>Relâmpago marquinho</h1>
+    </div>
+    <br>
+    <div>
+        <img class="marquinho" src="https://static.wikia.nocookie.net/pixar/images/a/ad/Cars_Lighting_Mcqueen.png/revision/latest?cb=20191025194603&path-prefix=pt-br" alt="relâmpago marquinho">
+    </div>
 </body>
 </html>

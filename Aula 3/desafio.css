@@ -1,0 +1,64 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+.linha-quadrado-azul{
+    height:33.3%;
+}
+
+.quadrado-azul{
+    width: 200px; 
+    height: 200px; 
+    background-color: rgb(7, 108, 241);
+   
+}
+
+.quadrado-laranja{
+    width: 33.3%;
+    height: 100%;
+    background-color: orange;
+
+}
+
+.l1{
+    display: flex;
+    justify-content: space-between;
+    height: 33.3%;
+}
+
+.l2{
+    display: flex;
+    justify-content: space-between;
+    height: 33.3%;
+}
+
+.l3{
+    display: flex;
+    justify-content: space-between;
+    height: 33.3%;
+}
+
+.flex{
+    display: flex;
+}
+
+.meio{
+    justify-content: center;
+}
+
+.esquerda{
+    justify-content: left;
+}
+
+.direita{
+    justify-content: right;
+}
+
+.oposto{
+    justify-content: space-between;
+}
+.pai{
+    height: 100vh;
+}

@@ -9,4 +9,8 @@ Prompt de comando
 VS code
 - CTRL "
 -No terminal mudar de powershel para Command Prompt
+- git config --global user.email"jomessofiaketlyn@gmail.com" e git config --global user.name"KetyJomes" 
+- git add .
+- git commit -m "alguma coisa"
+- git push
  

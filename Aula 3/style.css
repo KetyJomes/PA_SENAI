@@ -5,40 +5,50 @@
 }
 
 .quadrado{
-    width: 100%; /*faz com que um elemento ocupe 100% da largura do seu elemento pai (container).*/
-    height: 300px; /* define a altura de um elemento para um valor fixo de 300 pixels.*/
-    background-color: rgb(138, 223, 218);
-    position: fixed; /*é usada para posicionar um elemento em relação à janela de visualização. 
-    Isso significa que o elemento permanecerá na mesma posição na tela mesmo quando o usuário rolar a página.*/
-    top: 0;
+    width: 300px; 
+    height: 300px; 
+    background-color: rgb(112, 60, 172);
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  
 }
 
 .quadradinho{
-    background-color: rgb(6, 139, 128);
+    background-color: rgb(207, 151, 245);
     height: 150px;
     width: 150px;
-    position: absolute; /*é usada para posicionar um elemento fora do fluxo normal do documento*/
+    position: absolute; 
     top: 10px;
     left: 10px;
 
 }
-.textinho{
-    color:rgb(255, 252, 252); 
-    box-sizing: border-box;
-    text-align: center;
-} 
 
 .conteudo{
-    height: 3000px; /*para deixar a tela em um tamanho grande*/
+    height: 3000px; 
+
 
 }
 
 .flex{
-    /*Alinhamento horizontal*/
+    /*Alinhar o quadrado no centro*/
     width: 100%;
-    display: flex;
-    justify-content: center; 
+    display: flex; /*define um layout flexível para um elemento, permitindo que seus filhos sejam organizados 
+    em linha ou coluna de forma mais flexível do que os layouts tradicionais*/
+    justify-content: center; /*é tipo a linha*/
+    align-items: center; /*é tipo a coluna*/
 }
+
+.pai{
+    /*Pai é a tela inteira*/
+    height: 100vh; /*define a altura de um elemento como 100% da altura da janela de visualização (vh)*/
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+
+}
+
+
 
 
   

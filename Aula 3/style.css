@@ -1,5 +1,3 @@
-
-/*Alinhamento*/
 *{
     margin: 0px;
     padding: 0px;
@@ -9,14 +7,14 @@
 .quadrado{
     width: 100%; /*faz com que um elemento ocupe 100% da largura do seu elemento pai (container).*/
     height: 300px; /* define a altura de um elemento para um valor fixo de 300 pixels.*/
-    background-color: red;
+    background-color: rgb(138, 223, 218);
     position: fixed; /*é usada para posicionar um elemento em relação à janela de visualização. 
     Isso significa que o elemento permanecerá na mesma posição na tela mesmo quando o usuário rolar a página.*/
     top: 0;
 }
 
 .quadradinho{
-    background-color: orange;
+    background-color: rgb(6, 139, 128);
     height: 150px;
     width: 150px;
     position: absolute; /*é usada para posicionar um elemento fora do fluxo normal do documento*/
@@ -24,10 +22,22 @@
     left: 10px;
 
 }
+.textinho{
+    color:rgb(255, 252, 252); 
+    box-sizing: border-box;
+    text-align: center;
+} 
 
 .conteudo{
     height: 3000px; /*para deixar a tela em um tamanho grande*/
 
+}
+
+.flex{
+    /*Alinhamento horizontal*/
+    width: 100%;
+    display: flex;
+    justify-content: center; 
 }
 
 

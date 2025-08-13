@@ -1,0 +1,12 @@
+PASSO A PASSO
+
+Prompt de comando
+-cd desktop
+-git clone "repositório"
+-cd nome da pasta do repositório
+-code .
+
+VS code
+- CTRL "
+-No terminal mudar de powershel para Command Prompt
+ 

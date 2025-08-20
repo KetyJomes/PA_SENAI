@@ -1,10 +1,12 @@
-//Sintaxe
-let varL1 = 5
-var varL2 = 10
-const varL3 = 15
 
-//Obj
-let pessoa = {
-    nome: "Ketlyn",
-    idade: 19
+let title = document.getElementById('el1').innerHTML
+console.log(title)
+
+const recebaTexto = () => { //Função
+    let inputText = document.getElementById('el2').value 
+    console.log(inputText)
 }
+
+
+
+

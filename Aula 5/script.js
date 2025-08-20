@@ -1,10 +1,9 @@
 
-let title = document.getElementById('el1').innerHTML
-console.log(title)
+const trocarCor = () => { 
+    let quadrado = document.getElementById('quadrado')
 
-const recebaTexto = () => { //Função
-    let inputText = document.getElementById('el2').value 
-    console.log(inputText)
+    quadrado.classList.remove('ok');
+    quadrado.classList.add('bad')
 }
 
 

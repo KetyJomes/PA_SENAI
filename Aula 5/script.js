@@ -2,9 +2,17 @@
 const trocarCor = () => { 
     let quadrado = document.getElementById('quadrado')
 
-    quadrado.classList.remove('ok');
-    quadrado.classList.add('bad')
-}
+    if(quadrado.classList.add('ok')){
+        quadrado.classList.remove('ok')
+        quadrado.classList.add('bad')
+    }
+       
+    else{
+        quadrado.classList.remove('bad')
+        quadrado.classList.add('ok')
+    }
+    }
+        
 
 
 

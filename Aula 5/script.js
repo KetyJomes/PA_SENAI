@@ -2,7 +2,7 @@
 const trocarCor = () => { 
     let quadrado = document.getElementById('quadrado')
 
-    if(quadrado.classList.add('ok')){
+    if(quadrado.classList.contains('ok')){
         quadrado.classList.remove('ok')
         quadrado.classList.add('bad')
     }

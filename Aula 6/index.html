@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container flex centro fundo">
+        <div class="quadrado">
+            <div class="Titulo">
+                <img src="https://images.vexels.com/media/users/3/340632/isolated/preview/9fb40ded00ed0e9b4848edde51e87e66-icone-de-marca-de-selecao-verde-com-fundo-branco.png" width="40" height="40">  
+                <h1 id="texto">To-Do List </h1> 
+                <br>
+                <br>  
+            </div>
+            <br>
+            <div class="espaco flex">
+                <input type="text" id="caixinha" placeholder="Digite uma tarefa...">
+                <button onclick="adicionar()" id="botao">Adicionar</button>
+            </div>
+            <ul id="lista-tarefas"></ul> <!-- AQUI! -->
+        </div>
+   </div>
+   <script src="script.js"> </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* { 
+    margin: 0px; /* Remove a margem padrão de todos os elementos da página para evitar espaços indesejados */
+} 
+
+.fundo {
+    background-color: rgb(163, 223, 163); /* Define o fundo da página ou elemento como um verde claro */
+}
+
+#botao {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Sombra suave em volta do botão */
+    color: rgb(255, 255, 255); /* Cor do texto do botão: branco */
+    background-color: rgb(77, 139, 77); /* Fundo do botão: verde escuro */
+    padding: 5px; /* Espaço interno do botão para ficar confortável ao clicar */
+    border-radius: 0px 10px 10px 0px; /* Cantos arredondados só do lado direito (superior e inferior) */
+}
+
+#caixinha {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Sombra suave ao redor do input */
+    padding: 5px; /* Espaço interno do input */
+    border-radius: 10px 0px 0px 10px; /* Cantos arredondados só do lado esquerdo (superior e inferior) */
+}
+
+.quadrado {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; /* Sombra ao redor da caixa principal */
+    background-color: rgb(252, 253, 252); /* Fundo quase branco */
+    width: 350px; /* Largura fixa da caixa */
+    height: auto; /* Altura que cresce conforme conteúdo */
+    display: flex; /* Usa flexbox para layout flexível */
+    justify-content: center; /* Centraliza conteúdo horizontalmente */
+    align-items: center; /* Centraliza conteúdo verticalmente */
+    flex-direction: column; /* Organiza conteúdo em coluna (vertical) */
+    border-radius: 20px; /* Cantos arredondados suaves em toda a caixa */
+}
+
+.espaco {
+    gap: 0px; /* Espaçamento entre elementos filhos do flex container definido como zero */
+}
+
+.Titulo { 
+    display: flex; /* Layout flexível para o título */
+    font-family: "Times New Roman", sans-serif; /* Fonte serifada para o título */
+    font-style: italic; /* Texto em itálico */
+    font-weight: bold; /* Texto em negrito */
+    font-size: 16px; /* Tamanho da fonte do título */
+}
+
+#lista-tarefas {
+  margin-top: 15px;             /* Espaço de 15 pixels acima da lista, separando-a do que vem antes */
+  list-style-type: none;        /* Remove os marcadores padrão (bolinhas) da lista */
+  padding: 0;                   /* Remove o espaçamento interno padrão da lista */
+  width: 100%;                 /* Faz a lista ocupar toda a largura disponível do container pai */
+  font-family: Arial, sans-serif; /* Define a fonte da lista para Arial ou, se não disponível, uma fonte sans-serif */
+  overflow-wrap: break-word;   /* Permite que palavras muito longas quebrem para a próxima linha, evitando que a lista "estoure" horizontalmente */
+}
+
+#lista-tarefas li {
+  background-color: #d2ecc5;   /* Cor de fundo verde claro para cada item da lista */
+  padding: 10px;               /* Espaçamento interno de 10 pixels para deixar o texto confortável e afastado das bordas */
+  margin-bottom: 5px;          /* Espaço de 5 pixels entre os itens da lista, para separar visualmente cada tarefa */
+  border-radius: 5px;          /* Cantos arredondados para suavizar o visual dos itens */
+  width: 100%;                 /* Garante que o item ocupe toda a largura disponível do seu container pai (#lista-tarefas) */
+  box-sizing: border-box;      /* Inclui padding e border na largura total do item, evitando que o padding aumente o tamanho além do esperado */
+}
+
+
+.flex {
+    display: flex; /* Define o container como flexível (flexbox) */
+}
+
+.container {
+    height: 100vh; /* Altura igual a 100% da altura da tela do dispositivo */
+}
+
+.centro {
+    justify-content: center; /* Centraliza conteúdo no eixo horizontal dentro do flex container */
+    align-items: center; /* Centraliza conteúdo no eixo vertical dentro do flex container */
+}

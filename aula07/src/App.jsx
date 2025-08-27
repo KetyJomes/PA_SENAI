@@ -2,13 +2,16 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { HelloWorld } from './componentes/HelloWorld'
+import { Flecha } from './componentes/Flecha'
+import { Titulo } from './componentes/anonima'
 
-const App = () => {
+function App() {
 
   return (
-    <>
-      <HelloWorld/>
+    <>  
+        <h1>Hello World!</h1>
+        {<Flecha /> /*Melhor componente*/}
+        <Titulo texto="Hello World" /> 
     </>
   )
 }

@@ -1,0 +1,1 @@
+export const Titulo = (props) => <h1>{props.texto}</h1>;

@@ -1,0 +1,9 @@
+-Terminal cmd
+- npm create vite@latest
+- nome da pasta
+- React
+- JavaScript
+- cd aula07      
+- npm install    
+- npm run dev  
+

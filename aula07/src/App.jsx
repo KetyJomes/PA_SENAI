@@ -9,9 +9,9 @@ function App() {
 
   return (
     <>  
-        <h1>Hello World!</h1>
-        {<Flecha /> /*Melhor componente*/}
-        <Titulo texto="Hello World" /> 
+        <h1>Hello World! </h1> {/*Comum*/}
+        {<Flecha /> /*Flecha - Melhor componente*/}
+        <Titulo texto="Hello World" /> {/*Anonima*/}
     </>
   )
 }

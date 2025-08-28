@@ -3,20 +3,30 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+
 function App() {
-  const [count, setCount] = useState(0)
-  const [texto, setTexto] = useState("")
+  const [cor, setCor] = useState("black")
 
   return (
     <>
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <input type="text" onChange={(e) => setTexto(e.target.value)}></input>
-        <h1>{texto}</h1>
-        
+      <h1>02 Atividade</h1>
+
+      <div
+        style={{
+          width: "200px",
+          height: "200px",
+          backgroundColor: cor
+        }}
+       
+      ></div>
+      
+      <button onClick={() => setCor("blue")}>
+        Mudar cor
+      </button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
+
+

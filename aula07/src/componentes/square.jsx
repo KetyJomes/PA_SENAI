@@ -1,9 +1,9 @@
 import'./square.css'
 
-export const Square = ({cor}) => {
+export const Square = ({classe}) => {
   return(
     
-      <div className='Square' style={{background: cor}}></div> /* Isso serve para você não precisar fazer um arquivo para cada cor quem nem fizemos no azul. */
+      <div className={`Square ${classe}`}></div> 
     
   )
 }

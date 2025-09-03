@@ -1,28 +1,27 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 
 function App() {
-  const [cor, setCor] = useState("black")
+  const[visibilty, setVisibility] = useState(true) //A VISIBILIDADE DA NOSSA DIV VAI SER TRUE
 
   return (
     <>
-      <h1>02 Atividade</h1>
+    { visibilty &&
+      <div>
+        <h2>1 - Faça um botão que altere a visibilidade de um texto dentro da página. visível ou escondido.</h2>
 
-      <div
-        style={{
-          width: "200px",
-          height: "200px",
-          backgroundColor: cor
-        }}
-       
-      ></div>
-      
-      <button onClick={() => setCor("blue")}>
-        Mudar cor
-      </button>
+      </div>
+    }
+
+        <div>
+          <button onClick={() => {setVisibility(visibilty == true ? false : true)}}> 
+            Alterar visibilidade 
+          </button>
+        </div>
+ 
     </>
   );
 }

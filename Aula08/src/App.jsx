@@ -5,7 +5,8 @@ import './App.css'
 
 
 function App() {
-  const[visibilty, setVisibility] = useState(true) //A VISIBILIDADE DA NOSSA DIV VAI SER TRUE
+  const[visibilty, setVisibility] = useState(true) //A VISIBILIDADE DA NOSSA DIV VAI SER TRUE - ex01
+  const [cor, setCor] = useState("gray")
 
   return (
     <>
@@ -21,6 +22,16 @@ function App() {
             Alterar visibilidade 
           </button>
         </div>
+  
+    <div style={{ backgroundColor: cor, color: 'white'}}>
+      <h2>2 - Faça um botão que altere a cor de fundo de uma div </h2>
+    </div>
+      
+    <button onClick={() => {setCor(cor == "gray" ? "purple" : "gray")}}> 
+      Alterar cor 
+    </button>
+      
+
  
     </>
   );

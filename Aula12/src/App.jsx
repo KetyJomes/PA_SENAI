@@ -11,7 +11,9 @@ const App = () => {
     //Roteamento do react Browser
      <BrowserRouter> 
       <Routes>
+        {/* //Navegar entre componentes */}
         <Route path='/' element = {<Home />} />
+        {/* Ao acessar o localHost, se quiser que apareça o que tem dentro do componente about, colocar /about do lado do localHost */}
         <Route path="/about" element={<About />} />      
       </Routes>  
     </BrowserRouter>

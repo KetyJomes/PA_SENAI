@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import { BrowserRouter, Link, Route, Routes} from 'react-router-dom'
 import {Home} from './pages/Home'
 import {About} from './pages/About'
 import { Profile } from './pages/Profile'
@@ -11,6 +11,13 @@ const App = () => {
   return (
     //Roteamento do react Browser
      <BrowserRouter> 
+      <nav>
+        {/* O código cria uma barra de navegação com dois links usando o React Router:
+        Link para a página principal (/).
+        Link para a página de informações (/about). */}
+        <Link to={'/'}>Home</Link>
+        <Link to={'/about'}>About</Link>
+      </nav>
       <Routes>
         {/* //Navegar entre componentes */}
         <Route path='/' element = {<Home />} />

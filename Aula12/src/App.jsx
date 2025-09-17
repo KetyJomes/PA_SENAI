@@ -5,6 +5,7 @@ import './App.css'
 import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import {Home} from './pages/Home'
 import {About} from './pages/About'
+import { Profile } from './pages/Profile'
 
 const App = () => {
   return (
@@ -14,7 +15,9 @@ const App = () => {
         {/* //Navegar entre componentes */}
         <Route path='/' element = {<Home />} />
         {/* Ao acessar o localHost, se quiser que apareça o que tem dentro do componente about, colocar /about do lado do localHost */}
-        <Route path="/about" element={<About />} />      
+        <Route path="/about" element={<About />} />  
+        <Route path="/profile/:nome" element={<Profile />} />  
+
       </Routes>  
     </BrowserRouter>
   )

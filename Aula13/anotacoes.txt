@@ -1,7 +1,7 @@
 index.css
 - @import "tailwindcss";
 
-Terminal
+Terminal (dentro da pasta com o react instalado)
 -npm i
 - npm install tailwindcss @tailwindcss/vite
 

@@ -10,8 +10,8 @@ function App() {
     <>
       {/* Cor e tamanho da palavra */}
       <h1 className='text-blue-500 text-6xl'>Testando tainwind</h1>
-{/* 
-      <h1 className="max-h-screen">Testando tainwind</h1>
+      
+      {/* <h1 className="max-h-screen">Testando tainwind</h1>
       <h1 className="min-h-screen">Testando tainwind</h1> */}
 
       {/* Quadrado centrelizado na div */}

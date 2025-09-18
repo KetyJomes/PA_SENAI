@@ -9,12 +9,28 @@ function App() {
 
   return (
     <>
-     <div className="h-screen flex justify items">
-        <div className='w-52 h-52 bg-blue-500'></div>
-     </div>
-     <div className='h-screen flex justify-between items'>
-      <div className='w-52 h-52 bg-blue-500'></div>
-     </div>
+    {/* h-screen é a altura da tela*/}
+    <div className="h-screen">
+      <div className='h-1/3 flex justify-between'>{/*  é o pai */}
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+      </div>
+
+      <div className='h-1/3 flex justify-between'>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+      </div>
+
+      <div className='h-1/3 flex justify-between'>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+        <div className="h-52 w-52 bg-blue-500"></div>
+      </div>
+    </div>
+
     </>
   )
 }

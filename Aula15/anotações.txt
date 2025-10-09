@@ -1,0 +1,6 @@
+Terminal
+
+-npx create-expo-app@latest
+-cd nome da pasta criada
+-npm run web
+-expo start --web  

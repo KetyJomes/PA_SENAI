@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import {Botao}  from './components/Botao'
+import axios from 'axios'
 
 // function App() {                                  USESTATE
 //   const [value, setValue] = useState(0)
@@ -141,4 +142,8 @@ import {Botao}  from './components/Botao'
 //   )
 // }
 
-// export default App
+// export default App  
+
+
+// instalar o axios - npm i axios                           API
+

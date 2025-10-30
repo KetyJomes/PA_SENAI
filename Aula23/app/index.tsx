@@ -2,7 +2,7 @@ import { View, Text, StyleSheet } from 'react-native';
 
 export default function HomeScreen() {
   return (
-  <View>
+  <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
     <Text style={style.colorBlue}>Hello World!!!</Text>
     <br />
     <View style={style.square}></View>

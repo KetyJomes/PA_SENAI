@@ -1,43 +1,42 @@
-// import React from "react";
-import React from "react";
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert } from "react-native";
+import React, { useEffect, useState } from "react";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet} from "react-native";
+import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
+import {app} from '../firebaseConfig';
 
 export default function CadastroScreen() {
-  const handleCadastro = () => {
-    console.log("Sucesso", "Cadastro realizado com sucesso!");
-  };
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
+  // const handleCadastro = () => {
+  //   console.log("Sucesso", "Cadastro realizado com sucesso!");
+  // };
+  const auth = getAuth(app)
+
+    const singUp = () =>{
+      if(senha === confirmarSenha){
+        createUserWithEmailAndPassword(auth, email, senha)
+      }
+      else{
+        return alert('Erro!')
+      }
+    }
+
+  useEffect(() => {
+    console.log(nome, email, senha, confirmarSenha)
+  }, [nome,email,senha, confirmarSenha])
 
   return (
     <View style={styles.container}>
       <View style={styles.card}>
         <Text style={styles.titulo}>Criar Cadastro</Text>
 
-        <TextInput
-          style={styles.input}
-          placeholder="Nome"
-          placeholderTextColor="#aaa"
-        />
+        <TextInput style={styles.input} placeholder="Nome" placeholderTextColor="#aaa" onChangeText={nome => setNome(nome)}/>
+        <TextInput style={styles.input} placeholder="E-mail" placeholderTextColor="#aaa" onChangeText={email => setEmail(email)}/>
+        <TextInput style={styles.input} placeholder="Senha" secureTextEntry placeholderTextColor="#aaa" onChangeText={senha => setSenha(senha)}/>
+        <TextInput style={styles.input} placeholder="Confirmar senha"  secureTextEntry placeholderTextColor="#aaa" onChangeText={confirmarSenha => setConfirmarSenha(confirmarSenha)}/>
 
-        <TextInput
-          style={styles.input}
-          placeholder="E-mail"
-          placeholderTextColor="#aaa"
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          placeholderTextColor="#aaa"
-        />
-
-        <TextInput
-          style={styles.input}
-          placeholder="Confirmar senha"
-          placeholderTextColor="#aaa"
-
-        />
-
-        <TouchableOpacity style={styles.botao} onPress={handleCadastro}>
+        <TouchableOpacity style={styles.botao} onPress={() => singUp()}>
           <Text style={styles.textoBotao}>Cadastrar</Text>
         </TouchableOpacity>
       </View>
@@ -96,4 +95,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 });
+
+
 

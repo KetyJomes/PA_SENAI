@@ -2,23 +2,55 @@ import React, { useEffect, useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet} from "react-native";
 import {getAuth, createUserWithEmailAndPassword} from 'firebase/auth'
 import {app} from '../firebaseConfig';
+import { Link, router } from "expo-router";
+import Swal from 'sweetalert2';
 
 export default function CadastroScreen() {
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [confirmarSenha, setConfirmarSenha] = useState("");
+  const minSenha = 6;
   // const handleCadastro = () => {
   //   console.log("Sucesso", "Cadastro realizado com sucesso!");
   // };
+
   const auth = getAuth(app)
 
-    const singUp = () =>{
-      if(senha === confirmarSenha){
-        createUserWithEmailAndPassword(auth, email, senha)
+    const singUp = async() =>{
+      if(senha.length >= minSenha){
+        if(senha === confirmarSenha){
+          try{
+            await createUserWithEmailAndPassword(auth, email, senha)
+            Swal.fire({
+            icon: "success",
+            title: "Sucesso",
+            text: "Usuário registrado"  
+            });
+            return router.navigate('/login')
+          }
+          catch(e){
+            return Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "Email já exixtente!"  
+            });
+          }
+        }
+        else{
+          return Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "As senhas não coincidem!"  
+            });
+        }
       }
       else{
-        return alert('Erro!')
+          return Swal.fire({
+            icon: "error",
+            title: "Erro",
+            text: "A senha deve ter no mínimo 6 caracteres!"  
+          });
       }
     }
 
@@ -39,6 +71,9 @@ export default function CadastroScreen() {
         <TouchableOpacity style={styles.botao} onPress={() => singUp()}>
           <Text style={styles.textoBotao}>Cadastrar</Text>
         </TouchableOpacity>
+        <View>
+          <Link href={'/login'}style={styles.textoEntrar}>Entrar</Link>
+        </View>
       </View>
     </View>
   );
@@ -93,6 +128,11 @@ const styles = StyleSheet.create({
     color: "#fff",
     fontSize: 16,
     fontWeight: "bold",
+  },
+  textoEntrar: {
+    color: "#2E7D32",
+    marginTop: 15,
+    textDecorationLine: "underline",           
   },
 });
 

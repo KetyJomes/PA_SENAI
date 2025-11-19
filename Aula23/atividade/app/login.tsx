@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link, router } from "expo-router";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
+import { app } from "@/firebaseConfig";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export default function LoginScreen() {
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+
+  const auth = getAuth(app);
+
+  const signIn = async () => {
+    await signInWithEmailAndPassword(auth,email,senha)
+    router.navigate('/home')
+  }
   return (
     <View style={styles.container}>
       <View style={styles.card}>
@@ -12,6 +24,7 @@ export default function LoginScreen() {
           placeholder="E-mail"
           placeholderTextColor="#aaa"
           keyboardType="email-address"
+          onChangeText={(text) => setEmail(text)}
         />
 
         <TextInput
@@ -19,13 +32,15 @@ export default function LoginScreen() {
           placeholder="Senha"
           placeholderTextColor="#aaa"
           secureTextEntry
+          onChangeText={(text) => setSenha(text)}
         />
 
-        <TouchableOpacity style={styles.botao}>
+        <TouchableOpacity style={styles.botao} onPress={signIn}>
           <Text style={styles.textoBotao}>Entrar</Text>
+          
         </TouchableOpacity>
 
-        <Text style={styles.textoCadastro}>Criar cadastro</Text>
+        <Link href={'/'}style={styles.textoCadastro}>Criar cadastro</Link>
       </View>
     </View>
   );

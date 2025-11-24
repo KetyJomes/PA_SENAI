@@ -33,7 +33,7 @@ export default function CadastroScreen() {
             return Swal.fire({
             icon: "error",
             title: "Erro",
-            text: "Email já exixtente!"  
+            text: "Email já existente!"  
             });
           }
         }

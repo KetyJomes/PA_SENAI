@@ -1,53 +1,72 @@
+import { db } from "@/firebaseConfig";
 import { Link, router } from "expo-router";
+import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import Swal from "sweetalert2";
 
 export default function LoginScreen() { 
     const [nomeGato, setNomeGato] = useState("");
+    const [idade, setIdade] = useState("");
+    const [raca, setRaca] = useState("");
     const [bio, setBio] = useState("");
+    const [imageUrl, setImageUrl] = useState('');
 
 
-    function cadastrarGato() {
-        if (!nomeGato.trim() || !bio.trim()) {
-            Swal.fire({
-                icon: "warning",
-                title: "Atenção",
-                text: "Preencha todos os campos!",
-            });
-            return;
+    async function cadastrarGato() {
+        try {
+      
+            if (!nomeGato || !idade || !raca ) {
+                console.log("Preencha Nome, idade e raça.");
+                return;
+            }
+
+            const gato = {
+                nomeGato,
+                idade: Number(idade),
+                raca,
+                bio: bio || null,
+                imageUrl,
+                createdAt: serverTimestamp(),
+                updatedAt: serverTimestamp(),
+            };
+
+            await addDoc(collection(db, "gatos"), gato);
+            console.log("Gato cadastrado!");
+
+        } catch (err) {
+            console.log("Erro ao cadastrar:", err);
         }
-
-        Swal.fire({
-            icon: "success",
-            title: "Gato cadastrado!",
-            text: `Nome: ${nomeGato}`,
-        });
-
     }
+
     return (
         <View style={styles.container}>
             <View style={styles.cabecalho}>
-                <Text style={styles.voltar}>Login</Text>
+                <Link href={'/login'}style={styles.voltar}>Login</Link>
                 <Text style={styles.titulo}>Bem-Vindo</Text>
             </View>
 
             <View style={styles.corpo}>
                 <View style={styles.fundocadastro}>
-                    <Text style={styles.titulo2}>Cadastrar Gato</Text>
+                    <Text style={styles.titulo2}>Cadastrar Gato🐾</Text>
                     <TextInput style={styles.input} placeholder="Nome" placeholderTextColor="#aaa" value={nomeGato} onChangeText={setNomeGato} />
-                    <TextInput style={styles.input} placeholder="Bio" placeholderTextColor="#aaa" value={bio} onChangeText={setBio}/>
+                    <TextInput style={styles.input} placeholder="Idade" placeholderTextColor="#aaa" value={idade} onChangeText={setIdade}/>
+                    <TextInput style={styles.input} placeholder="Raça" placeholderTextColor="#aaa" value={raca} onChangeText={setRaca}/>
+                    <TextInput style={styles.input} placeholder="Bio (opcional)" placeholderTextColor="#aaa" value={bio} onChangeText={setBio}/>
+                    <TextInput placeholder="Link da imagem (opcional)" placeholderTextColor="#aaa" onChangeText={setImageUrl} style={styles.input}/>
 
                     <TouchableOpacity style={styles.botao} onPress={cadastrarGato}>
                         <Text style={styles.textoBotao}>Cadastrar</Text>
                     </TouchableOpacity>
-
+                    <View>
+                        <Link href={'/gatos'}style={styles.verGato}>Ver gato de óculos</Link>
+                    </View>
                 </View>
             </View>
 
             <View style={styles.rodape}>
                 <Text style={styles.tituloRodape}>© 2025 - Criado por Ketlyn Sofia Jomes</Text>
             </View>
+
         </View>
     );
 }
@@ -57,7 +76,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     titulo: {
-        fontSize: 50,
+        fontSize: 40,
         fontWeight: "bold",
         color: "#EAF4EC",
         marginBottom: 20,
@@ -69,16 +88,26 @@ const styles = StyleSheet.create({
         fontFamily: "𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝",
         fontWeight: "bold",
     },
+    verGato: {
+        fontWeight: "bold",
+        textDecorationLine: 'underline',
+        color: "#4CAF50",
+        top: 0, 
+        marginTop: 40
+
+    },
     voltar: {
         position: 'absolute', 
-        backgroundColor: "#4CAF50",
+        fontWeight: "bold",
+        textDecorationLine: 'underline',
+        color: "#EAF4EC",
         top: 0, 
         left: 0, 
         marginLeft: 10, 
         marginTop: 60 
     },
     tituloRodape: {
-        fontSize: 20,
+        fontSize: 15,
         color: "#EAF4EC",
         marginBottom: 20,
         fontFamily: "𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝"

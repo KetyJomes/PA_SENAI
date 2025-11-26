@@ -5,7 +5,7 @@ export default function LoginScreen() {
   return (
     <View style={styles.container}>
         <View style = {styles.cabecalho}>
-            <Text style ={styles.voltar}>Login</Text>
+            <Link href={'/home'}style={styles.voltar}>Voltar</Link>
             <Text style={styles.titulo}>Bem-Vindo</Text>
         </View>  
         <View style={styles.corpo}>
@@ -15,12 +15,12 @@ export default function LoginScreen() {
                 </Text>
                 
                 <View style={styles.centro} >
-                    <Image style = {{height: 280, width: '100%', borderRadius: 20}}source={require("../assets/images/GatoDeOculos.webp")}></Image>
+                    <Image style = {{height: 270, width: '90%', borderRadius: 20}}source={require("../assets/images/GatoDeOculos.webp")}></Image>
                 </View>
             </View>
         </View>
         <View style={styles.rodape}>
-            <Text style={styles.titulo2}>© 2025 - Criado por Ketlyn Sofia Jomes</Text>
+            <Text style={styles.tituloRodape}>© 2025 - Criado por Ketlyn Sofia Jomes</Text>
         </View> 
     </View>
 
@@ -31,13 +31,13 @@ export default function LoginScreen() {
         flex: 1,
     },
     titulo: {
-        fontSize: 50,
+        fontSize: 40,
         fontWeight: "bold",
         color: "#EAF4EC",
         marginBottom: 20,
     },
-    titulo2: {
-        fontSize: 20,
+    tituloRodape: {
+        fontSize: 15,
         color: "#EAF4EC",
         marginBottom: 20,
         fontFamily: "𝐒𝐞𝐫𝐢𝐟 𝐁𝐨𝐥𝐝"
@@ -51,7 +51,9 @@ export default function LoginScreen() {
     },
     voltar: {
         position: 'absolute', 
-        backgroundColor: "#4CAF50",
+        fontWeight: "bold",
+        textDecorationLine: 'underline',
+        color: "#EAF4EC",
         top: 0, 
         left: 0, 
         marginLeft: 10, 
@@ -68,7 +70,7 @@ export default function LoginScreen() {
         fontWeight: "bold",
         color: "#06402B",
         fontFamily: "serif",
-        fontSize: 25,
+        fontSize: 20,
     },
     centro: {
         justifyContent: "center",
@@ -79,6 +81,7 @@ export default function LoginScreen() {
         width: "70%",
         backgroundColor: "#FFFFFF",
         borderRadius: 20,
+        margin: 60  
     },
     rodape: {
         height: "10%",
